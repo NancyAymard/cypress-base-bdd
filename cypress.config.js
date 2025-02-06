@@ -8,7 +8,10 @@ const createEsbuildPlugin =
 module.exports = defineConfig({
   env: {},
   e2e: {
-    specPattern: "cypress/e2e/features/**.feature",
+    chromeWebSecurity: false,
+    viewportWidth: 1920,
+    viewportHeight: 1080,
+    specPattern: "cypress/e2e/features/**/*.feature",
     async setupNodeEvents(on, config) {
       const bundler = createBundler({
         plugins: [createEsbuildPlugin(config)],
